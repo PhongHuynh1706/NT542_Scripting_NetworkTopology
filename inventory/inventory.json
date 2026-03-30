@@ -1,0 +1,220 @@
+{
+  "devices": [
+    {
+      "name": "R1",
+      "device_type": "cisco_ios_telnet",
+      "host": "127.0.0.1",
+      "port": 5000,
+      "config": [
+        "hostname R1",
+        "int fa0/0",
+        "ip address 10.0.0.1 255.255.255.0",
+        "no shut",
+        "int fa0/1",
+        "ip address 10.0.1.1 255.255.255.0",
+        "no shut",
+        "int fa1/0",
+        "ip address 10.0.2.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.0.0 0.0.0.255 area 0",
+        "network 10.0.1.0 0.0.0.255 area 0",
+        "network 10.0.2.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "R2",
+      "device_type": "cisco_ios_telnet",
+      "host": "127.0.0.1",
+      "port": 5001,
+      "config": [
+        "hostname R2",
+        "int fa0/0",
+        "ip address 10.0.0.2 255.255.255.0",
+        "no shut",
+        "int fa0/1",
+        "ip address 10.0.3.1 255.255.255.0",
+        "no shut",
+        "int fa1/0",
+        "ip address 10.0.4.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.0.0 0.0.0.255 area 0",
+        "network 10.0.3.0 0.0.0.255 area 0",
+        "network 10.0.4.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW1",
+      "device_type": "cisco_ios_telnet",
+      "host": "127.0.0.1",
+      "port": 5002,
+      "config": [
+        "hostname SW1",
+
+        "ip routing",
+
+        "int fa0/0",
+        "ip address 10.0.1.2 255.255.255.0",
+        "no shut",
+        "int fa0/1",
+        "ip address 10.0.3.2 255.255.255.0",
+        "no shut",
+        "int fa1/0",
+        "ip address 10.0.6.1 255.255.255.0",
+        "no shut",
+
+        "int fa1/1",
+        "ip address 10.0.7.1 255.255.255.0",
+        "no shut",
+
+        "router ospf 1",
+        "network 10.0.1.0 0.0.0.255 area 0",
+        "network 10.0.3.0 0.0.0.255 area 0",
+        "network 10.0.6.0 0.0.0.255 area 0",
+        "network 10.0.7.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW2",
+      "device_type": "cisco_ios_telnet",
+      "host": "127.0.0.1",
+      "port": 5003,
+      "config": [
+        "hostname SW2",
+
+        "ip routing",
+
+        "int fa0/0",
+        "ip address 10.0.2.2 255.255.255.0",
+        "no shut",
+        "int fa0/1",
+        "ip address 10.0.4.2 255.255.255.0",
+        "no shut",
+        "int fa1/0",
+        "ip address 10.0.8.1 255.255.255.0",
+        "no shut",
+        "int fa1/1",
+        "ip address 10.0.9.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.2.0 0.0.0.255 area 0",
+        "network 10.0.4.0 0.0.0.255 area 0",
+        "network 10.0.8.0 0.0.0.255 area 0",
+        "network 10.0.9.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW3",
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.244.138",
+      "port": 5000,
+      "config": [
+        "hostname SW3",
+
+        "ip routing",
+
+        "int e0/0",
+        "ip address 10.0.6.2 255.255.255.0",
+        "no shut",
+        "int e0/1",
+        "ip address 192.168.10.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.6.0 0.0.0.255 area 0",
+        "network 192.168.10.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW4",
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.244.138",
+      "port": 5001,
+      "config": [
+        "hostname SW4",
+
+        "ip routing",
+
+        "int e0/0",
+        "ip address 10.0.7.2 255.255.255.0",
+        "no shut",
+        "int e0/1",
+        "ip address 192.168.20.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.7.0 0.0.0.255 area 0",
+        "network 192.168.20.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW5",
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.244.138",
+      "port": 5002,
+      "config": [
+        "hostname SW5",
+
+        "ip routing",
+
+        "int e0/0",
+        "ip address 10.0.8.2 255.255.255.0",
+        "no shut",
+        "int e0/1",
+        "ip address 192.168.30.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.8.0 0.0.0.255 area 0",
+        "network 192.168.30.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "SW6",
+      "device_type": "cisco_ios_telnet",
+      "host": "192.168.244.138",
+      "port": 5003,
+      "config": [
+        "hostname SW6",
+
+        "ip routing",
+
+        "int e0/0",
+        "ip address 10.0.9.2 255.255.255.0",
+        "no shut",
+        "int e0/1",
+        "ip address 192.168.40.1 255.255.255.0",
+        "no shut",
+        "router ospf 1",
+        "network 10.0.9.0 0.0.0.255 area 0",
+        "network 192.168.40.0 0.0.0.255 area 0"
+      ]
+    },
+    {
+      "name": "PC1",
+      "type": "pc",
+      "host": "127.0.0.1",
+      "port": 5004,
+      "config": ["ip 192.168.10.2 192.168.10.1 24"]
+    },
+    {
+      "name": "PC2",
+      "type": "pc",
+      "host": "127.0.0.1",
+      "port": 5006,
+      "config": ["ip 192.168.20.2 192.168.20.1 24"]
+    },
+    {
+      "name": "PC3",
+      "type": "pc",
+      "host": "127.0.0.1",
+      "port": 5008,
+      "config": ["ip 192.168.30.3 192.168.30.1 24"]
+    },
+    {
+      "name": "PC4",
+      "type": "pc",
+      "host": "127.0.0.1",
+      "port": 5010,
+      "config": ["ip 192.168.40.3 192.168.40.1 24"]
+    }
+  ]
+}
